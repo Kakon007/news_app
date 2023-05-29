@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'components/carousel_silder.dart';
 import 'components/news_cards.dart';
-import 'components/recomendation_part.dart';
+import 'components/title_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,11 +17,15 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         body: Column(
       children: [
+        const TitleWidget(title: "Breaking News"),
+        const SizedBox(
+          height: 15,
+        ),
         const CarouselSliders(),
         const SizedBox(
           height: 20,
         ),
-        const RecomendationPart(),
+        const TitleWidget(title: "Top News"),
         const SizedBox(
           height: 20,
         ),
