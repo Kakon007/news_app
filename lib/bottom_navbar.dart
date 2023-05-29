@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/top_news/top_news_screen.dart';
 
-import 'home/home.dart';
+import 'home/view/home.dart';
 
 class BottomNavigationBarPage extends StatefulWidget {
   const BottomNavigationBarPage({super.key});
