@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'components/carousel_silder.dart';
+import 'components/news_cards.dart';
 import 'components/recomendation_part.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,12 +16,26 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
-      children: const [
-        CarouselSliders(),
-        SizedBox(
+      children: [
+        const CarouselSliders(),
+        const SizedBox(
           height: 20,
         ),
-        RecomendationPart()
+        const RecomendationPart(),
+        const SizedBox(
+          height: 20,
+        ),
+        Expanded(
+          child: ListView.builder(
+            physics: const AlwaysScrollableScrollPhysics(),
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            itemCount: 6,
+            itemBuilder: (context, i) {
+              return const NewsCards();
+            },
+          ),
+        )
       ],
     ));
   }
