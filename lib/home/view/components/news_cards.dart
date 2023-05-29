@@ -17,7 +17,7 @@ class NewsCards extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 side: const BorderSide(color: Colors.white, width: 1)),
             1),
-        elevation: 0.5,
+        elevation: 0.0,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
