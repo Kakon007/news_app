@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'components/carousel_silder.dart';
+import 'components/recomendation_part.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,6 +17,10 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Column(
       children: const [
         CarouselSliders(),
+        SizedBox(
+          height: 20,
+        ),
+        RecomendationPart()
       ],
     ));
   }
