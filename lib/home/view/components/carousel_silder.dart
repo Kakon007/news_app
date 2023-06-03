@@ -10,20 +10,39 @@ final List<String> imgList = [
   'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
 ];
 
-final List<Widget> imageSliders = imgList
-    .map((item) => Container(
-          margin: const EdgeInsets.all(5.0),
-          child: ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(25.0)),
-              child: Image.network(item, fit: BoxFit.cover, width: 1000.0)),
-        ))
-    .toList();
-
 class CarouselSliders extends StatelessWidget {
   const CarouselSliders({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> imageSliders = imgList
+        .map((item) => Stack(
+              children: [
+                Container(
+                  margin: const EdgeInsets.all(5.0),
+                  child: ClipRRect(
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(25.0)),
+                      child: Image.network(item,
+                          fit: BoxFit.cover, width: 1000.0)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: Colors.blue.withOpacity(0.9),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: const Text(
+                      "Sports",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                ),
+              ],
+            ))
+        .toList();
     return CarouselSlider(
       options: CarouselOptions(
         aspectRatio: 2.0,
